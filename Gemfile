@@ -1,0 +1,12 @@
+source 'https://rubygems.org'
+
+gem 'cucumber'
+gem 'rspec' , '~> 3.0.0'
+gem 'capybara' , '~> 2.3.0'
+gem 'selenium-webdriver'
+gem 'launchy'
+gem 'rack'
+gem 'rake'
+gem 'httparty'
+gem 'json'
+gem 'pry'

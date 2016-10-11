@@ -1,0 +1,11 @@
+exam_post:
+   code: "USG"
+   name: "Ultrassom braço esquerdo"
+   tag: "Ultrassom,Ultrason"
+
+exam_query:
+  query: "Ultra*"
+  invalid_query: "?"
+
+exam_delete:
+  invalid_id: "123"
