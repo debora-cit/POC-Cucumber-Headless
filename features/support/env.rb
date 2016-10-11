@@ -21,9 +21,7 @@ ENV = ENV['ENV'] || 'local'
 ENVIRONMENT = (YAML.load_file('./config/environment.yml'))[ENV]
 DEFAULT_DATA = (YAML.load_file('./fixtures/default_data.yml'))
 
+
 After('@post') do |scenario|
-  @response = HTTParty.delete("http://localhost:8088/exame/#{@id}",
-    {
-     :headers => { 'Content-Type' => 'application/json', 'Accept' => 'application/json'}
-    })
+  @response = Exam.new.delete_exam(@id)
 end
