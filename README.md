@@ -23,6 +23,17 @@ POC tests, using the BDD framework Cucumber to provide documentation to automate
             $ git clone https://github.com/debora-cit/POC-Cucumber-Headless.git
             $ bundle
 
+* Install chromedriver
+
+            $ sudo apt-get install unzip
+			$ wget -N http://chromedriver.storage.googleapis.com/2.20/chromedriver_linux64.zip
+			$ unzip chromedriver_linux64.zip
+			$ chmod +x chromedriver
+			$ sudo mv -f chromedriver /usr/local/share/chromedriver
+			$ sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
+			$ sudo ln -s /usr/local/share/chromedriver /usr/bin/chromedriver
+
+
 ## Running Tests (Examples)
 
             $ cucumber features --tags @front
