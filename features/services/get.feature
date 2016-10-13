@@ -2,7 +2,8 @@ Feature: List exams
 
 @services
   Scenario: 1 - List exams with success
-    Given I sent valid data about a existent exame
+  	Given I sent valid data about a nonexistent exame
+    And I sent valid data about a existent exame
     Then I should see at least one exame
     And I should get success
 
