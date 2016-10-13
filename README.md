@@ -26,7 +26,7 @@ POC tests, using the BDD framework Cucumber to provide documentation to automate
 * Install chromedriver
 
             $ sudo apt-get install unzip
-			$ wget -N http://chromedriver.storage.googleapis.com/2.20/chromedriver_linux64.zip
+			$ wget -N http://chromedriver.storage.googleapis.com/2.24/chromedriver_linux64.zip
 			$ unzip chromedriver_linux64.zip
 			$ chmod +x chromedriver
 			$ sudo mv -f chromedriver /usr/local/share/chromedriver
@@ -42,7 +42,8 @@ POC tests, using the BDD framework Cucumber to provide documentation to automate
 ## Running with docker
 
             $ docker build -t poc .
-            $ docker run poc cucumber features -t @services
+            $ docker run poc cucumber features -t @front
+            $ docker run -it --net=host --rm poc bundle exec cucumber --tag @services
 
 ## Options
 * ENV - In which environment will run the test

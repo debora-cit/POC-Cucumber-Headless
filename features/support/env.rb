@@ -5,15 +5,19 @@ require 'httparty'
 
 #Front
 
-driver = :chrome
-
-Capybara.default_driver = :selenium
-Capybara.register_driver driver do |app|
-    Capybara::Selenium::Driver.new(app, :browser => driver)
+chrome_driver = :chrome
+Capybara.register_driver chrome_driver do |app|
+  Capybara::Selenium::Driver.new(
+   app,
+   :browser => chrome_driver,
+   desired_capabilities: {
+      "chromeOptions" => {
+       "args" => %w{ no-sandbox }
+     }
+    }
+  )
 end
-
-Capybara.javascript_driver = driver
-Capybara.default_driver= driver
+Capybara.default_driver = chrome_driver
 Capybara.page.driver.browser.manage.window.maximize
 
 #Services
